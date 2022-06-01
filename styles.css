@@ -16,7 +16,7 @@ body {
 
 #mascots {
     position: fixed;
-    top: 6.5rem;
+    top: 8rem;
     justify-content: center;
     z-index: -1;
 }
@@ -27,6 +27,42 @@ body {
 
 #hero {
     margin: 3rem;
+}
+
+#regions-select {
+    margin-top: 5.5rem;
+    text-align: center;
+    align-items: center;
+}
+
+input[type="checkbox"] {
+    color: #f53535;
+    border-radius: ;
+}
+input[type="checkbox"]:checked {
+    color: #f53535;
+    border-radius: ;
+}
+
+.region-boxes {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+.location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    margin: 0rem 1rem 2rem;
+    
+}
+
+.selector {
+    display: hidden;
+    color: #f53535;
+    padding: 10px;
+    border: 1px solid black;
 }
 
 h1 {
