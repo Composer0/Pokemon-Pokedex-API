@@ -1,5 +1,5 @@
 const poke_container = document.getElementById('poke-container')
-let pokemon_count = 151
+let pokemon_count = 0
 const colors = {
     fire: '#FDDFDF',
     water: '#DEF3FD',
@@ -8,23 +8,91 @@ const colors = {
     ground: '#f4e7da',
     rock: '#d5d5d4',
     fairy: '#fceaff',
-    poison: '#98d7a5',
+    poison: '#ebccfa',
     bug: '#f8d5a3',
     dragon: '#97b3e6',
-    psychic: '#eaeda1',
+    psychic: '#faccda',
     flying: '#f5f5f5',
     fighting: '#e6e0d4',
-    normal: '#f5f5f5'
+    normal: '#f5f5f5',
+    dark: '#aaaaaa',
+    steel: '#9d9c9c',
+    ghost: '#ceccfa',
+    ice: 'cbfffe'
 }
 
 const main_types = Object.keys(colors)
-console.log(main_types)
+
+// function region_select() {
+//     if (kanto.value = true) {
+//         pokemon_count = 151
+//         fetchPokemon
+//     }
+// }
+
+
+// Search Functions
+const all = document.getElementById('all')
+const kanto = document.getElementById('Kanto')
+const johto = document.getElementById('Johto')
+const hoenn = document.getElementById('Hoenn')
+const sinnoh = document.getElementById('Sinnoh')
+const unova = document.getElementById('Unova')
+const kalos = document.getElementById('Kalos')
+const alola = document.getElementById('Alola')
+const galar = document.getElementById('Galar')
+const regions = [kanto, johto, hoenn, sinnoh, unova, kalos, alola, galar]
+
+
+all.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="all"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=898
+    fetchPokemon()
+})
+
+kanto.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="kanto"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=151
+    fetchPokemon()
+})
+
+johto.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="kanto"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=251
+    fetchPokemon(152)
+})
+
+hoenn.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="hoenn"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=386
+    fetchPokemon(386)
+})
+
+// End of Search Functions
+
 
 let fetchPokemon = async () => {
     for(let i = 1; i <= pokemon_count; i++) {
         await getPokemon(i)
     }
 }
+
 
 const getPokemon = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
@@ -71,5 +139,3 @@ const createPokemonCard = (pokemon) => {
     // Fun note, when using the debugger on browser you will not be able to easily determine if the site is created using JavaScript made HTML or natural HTML.
     poke_container.appendChild(pokemonEl)
 }
-
-fetchPokemon()
