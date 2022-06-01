@@ -14,6 +14,17 @@ body {
     margin: 0;
 }
 
+#mascots {
+    position: fixed;
+    top: 6.5rem;
+    justify-content: center;
+    z-index: -1;
+}
+
+#mascots img {
+    width: 16rem;
+}
+
 #hero {
     margin: 3rem;
 }
