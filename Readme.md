@@ -1,8 +1,8 @@
 # Pokemon Pokedex
 
-### HTML | CSS | JavaScript | API
+### HTML | CSS | JavaScript | RESTful API
 
-This application features the use of PokeAPI which can be found here: https://pokeapi.co/
+This application features the use of RESTful API known as PokeAPI which can be found here: https://pokeapi.co/
 
 To make the API work correctly I used async/await class methods to gather Pokemon. 
 
