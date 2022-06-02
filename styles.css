@@ -16,10 +16,11 @@ body {
 }
 
 #mascots {
-    position: fixed;
+    position: flex;
     top: 8rem;
     justify-content: center;
     z-index: -1;
+    margin: -4rem;
 }
 
 #mascots img {
@@ -27,14 +28,44 @@ body {
 }
 
 #hero {
-    margin: 3rem;
+    margin: 3rem auto 0rem;
 }
 
 #regions-select {
     font-family: 'Secular One', sans-serif;
-    margin-top: 5.5rem;
+    margin-top: 0rem;
     text-align: center;
     align-items: center;
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #07b3df;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #f53535;
+    border: 1px solid rgb(23, 9, 148);
+    border-radius: 7px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(248, 200, 41);
+    border: 1px solid rgb(30, 9, 148);
+  }
+
+label {
+    color: #12011b;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 input[type="checkbox"] {
@@ -47,13 +78,6 @@ input[type="checkbox"] {
     cursor: pointer;
     align-items: center;
     justify-content: center;
-}
-
-label {
-    color: #12011b;
-    font-size: 16px;
-    cursor: pointer;
-    font-weight: bold;
 }
 
 input[type="checkbox"]:hover{
@@ -70,6 +94,7 @@ input[type="checkbox"]:checked{
     flex-direction: column;
     text-align: center;
 }
+
 .location {
     display: flex;
     flex-direction: column;
@@ -123,6 +148,7 @@ h1 {
     height: 120px;
     text-align: center;
     margin: 0 auto;
+    cursor: pointer;
 }
 
 .pokemon .img-container img {

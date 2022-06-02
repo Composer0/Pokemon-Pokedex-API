@@ -23,15 +23,8 @@ const colors = {
 
 const main_types = Object.keys(colors)
 
-// function region_select() {
-//     if (kanto.value = true) {
-//         pokemon_count = 151
-//         fetchPokemon
-//     }
-// }
 
-
-// Search Functions
+// Button Variables
 const all = document.getElementById('all')
 const kanto = document.getElementById('Kanto')
 const johto = document.getElementById('Johto')
@@ -41,17 +34,141 @@ const unova = document.getElementById('Unova')
 const kalos = document.getElementById('Kalos')
 const alola = document.getElementById('Alola')
 const galar = document.getElementById('Galar')
-const regions = [kanto, johto, hoenn, sinnoh, unova, kalos, alola, galar]
+const regions = [all, kanto, johto, hoenn, sinnoh, unova, kalos, alola, galar]
+// End of Button Variables
 
 
+// Selector: One at a time.
+function select() {
+        if (all.checked === true) {
+            kanto.checked = false;
+            johto.checked = false;
+            hoenn.checked = false;
+            sinnoh.checked = false;
+            unova.checked = false;
+            kalos.checked = false;
+            alola.checked = false;
+            galar.checked = false;
+        }
+    }
+function selectK() {
+
+    if (kanto.checked === true) {
+        all.checked = false;
+        johto.checked = false;
+        hoenn.checked = false;
+        sinnoh.checked = false;
+        unova.checked = false;
+        kalos.checked = false;
+        alola.checked = false;
+        galar.checked = false;
+    } 
+}
+function selectJ() {
+    if (johto.checked === true) {
+        all.checked = false;
+        kanto.checked = false;
+        hoenn.checked = false;
+        sinnoh.checked = false;
+        unova.checked = false;
+        kalos.checked = false;
+        alola.checked = false;
+        galar.checked = false;
+    } 
+}
+function selectH() {
+    if (hoenn.checked === true) {
+        all.checked = false;
+        kanto.checked = false;
+        johto.checked = false;
+        sinnoh.checked = false;
+        unova.checked = false;
+        kalos.checked = false;
+        alola.checked = false;
+        galar.checked = false;
+    } 
+}
+
+function selectS() {
+    if (sinnoh.checked === true) {
+        all.checked = false;
+        kanto.checked = false;
+        johto.checked = false;
+        hoenn.checked = false;
+        unova.checked = false;
+        kalos.checked = false;
+        alola.checked = false;
+        galar.checked = false;
+    } 
+}
+
+function selectU() {
+    if (unova.checked === true) {
+        all.checked = false;
+        kanto.checked = false;
+        johto.checked = false;
+        hoenn.checked = false;
+        sinnoh.checked = false;
+        kalos.checked = false;
+        alola.checked = false;
+        galar.checked = false;
+    } 
+}
+
+function selectKa() {
+    if (kalos.checked === true) {
+        all.checked = false;
+        kanto.checked = false;
+        johto.checked = false;
+        hoenn.checked = false;
+        sinnoh.checked = false;
+        unova.checked = false;
+        alola.checked = false;
+        galar.checked = false;
+    } 
+}
+
+function selectA() {
+    if (alola.checked === true) {
+        all.checked = false;
+        kanto.checked = false;
+        johto.checked = false;
+        hoenn.checked = false;
+        sinnoh.checked = false;
+        unova.checked = false;
+        kalos.checked = false;
+        galar.checked = false;
+    } 
+}
+
+function selectG() {
+    if (galar.checked === true) {
+        all.checked = false;
+        kanto.checked = false;
+        johto.checked = false;
+        hoenn.checked = false;
+        sinnoh.checked = false;
+        unova.checked = false;
+        kalos.checked = false;
+        alola.checked = false;
+    } 
+}
+
+    
+    console.log(select)
+    
+    
+// Search Functions
 all.addEventListener('click', (e) => {
-    let checkboxes = document.querySelectorAll('input[name="all"]:checked');
-    let output = [];
-    checkboxes.forEach((checkbox) => {
-        output.push(checkbox.value);
-    })
-    pokemon_count=898
-    fetchPokemon()
+        let checkboxes = document.querySelectorAll('input[name="all"]:checked');
+        let output = [];
+        checkboxes.forEach((checkbox) => {
+            output.push(checkbox.value);
+        })
+        pokemon_count=898
+    removePokemonCard()
+    select()
+    fetchPokemon() 
 })
 
 kanto.addEventListener('click', (e) => {
@@ -61,17 +178,21 @@ kanto.addEventListener('click', (e) => {
         output.push(checkbox.value);
     })
     pokemon_count=151
+    removePokemonCard()
+    selectK()
     fetchPokemon()
 })
 
 johto.addEventListener('click', (e) => {
-    let checkboxes = document.querySelectorAll('input[name="kanto"]:checked');
+    let checkboxes = document.querySelectorAll('input[name="johto"]:checked');
     let output = [];
     checkboxes.forEach((checkbox) => {
         output.push(checkbox.value);
     })
     pokemon_count=251
-    fetchPokemon(152)
+    removePokemonCard()
+    selectJ()
+    fetchPokemonJohto()
 })
 
 hoenn.addEventListener('click', (e) => {
@@ -81,19 +202,123 @@ hoenn.addEventListener('click', (e) => {
         output.push(checkbox.value);
     })
     pokemon_count=386
-    fetchPokemon(386)
+    removePokemonCard()
+    selectH()
+    fetchPokemonHoenn()
 })
 
+sinnoh.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="sinnoh"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=494
+    removePokemonCard()
+    selectS()
+    fetchPokemonSinnoh()
+})
+
+unova.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="unova"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=649
+    removePokemonCard()
+    selectU()
+    fetchPokemonUnova()
+})
+
+kalos.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="kalos"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=721
+    removePokemonCard()
+    selectKa()
+    fetchPokemonKalos()
+})
+
+alola.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="alola"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=809
+    removePokemonCard()
+    selectA()
+    fetchPokemonAlola()
+})
+
+galar.addEventListener('click', (e) => {
+    let checkboxes = document.querySelectorAll('input[name="galar"]:checked');
+    let output = [];
+    checkboxes.forEach((checkbox) => {
+        output.push(checkbox.value);
+    })
+    pokemon_count=898
+    removePokemonCard()
+    selectG()
+    fetchPokemonGalar()
+})
 // End of Search Functions
 
-
+// Fetch functions
 let fetchPokemon = async () => {
     for(let i = 1; i <= pokemon_count; i++) {
         await getPokemon(i)
     }
 }
 
+let fetchPokemonJohto = async () => {
+    for(let i = 152; i <= pokemon_count; i++) {
+        await getPokemon(i)
+    }
+}
 
+let fetchPokemonHoenn = async () => {
+    for(let i = 252; i <= pokemon_count; i++) {
+        await getPokemon(i)
+    }
+}
+
+let fetchPokemonSinnoh = async () => {
+    for(let i = 387; i <= pokemon_count; i++) {
+        await getPokemon(i)
+    }
+}
+
+let fetchPokemonUnova = async () => {
+    for(let i = 495; i <= pokemon_count; i++) {
+        await getPokemon(i)
+    }
+}
+
+let fetchPokemonKalos = async () => {
+    for(let i = 650; i <= pokemon_count; i++) {
+        await getPokemon(i)
+    }
+}
+
+let fetchPokemonAlola = async () => {
+    for(let i = 722; i <= pokemon_count; i++) {
+        await getPokemon(i)
+    }
+}
+
+let fetchPokemonGalar = async () => {
+    for(let i = 810; i <= pokemon_count; i++) {
+        await getPokemon(i)
+    }
+}
+// End of Fetch Functions
+
+// Gather data
 const getPokemon = async (id) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
     const res = await fetch(url)
@@ -102,8 +327,9 @@ const getPokemon = async (id) => {
 
 }
 
+// Construct visual medium for information
 const createPokemonCard = (pokemon) => {
-    const pokemonEl = document.createElement('div')
+    var pokemonEl = document.createElement('div')
     pokemonEl.classList.add('pokemon')
 
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
@@ -115,19 +341,19 @@ const createPokemonCard = (pokemon) => {
     const type = main_types.find(type => poke_types.indexOf(type) > -1)
     const typeName = type[0].toUpperCase() + type.slice(1)
 
+    // const type finds the type that is being used by the pokemon. That type is inserted/identified into the colors array to assign the color to the pokemon's box.
     const color = colors[type]
-
     // style draws in CSS property! Be aware that certain descriptors change in presentation when ported over to JavaScript.
     pokemonEl.style.backgroundColor=color
     
-    const pokemonInnerHTML = `
+    let pokemonInnerHTML = `
     <div class="img-container">
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="">
     </div>
     <div class="info">
         <span class="number">#${id}</span>
         <h3 class="name">${name}</h3>
-        <small class="type">Type: <span>${typeName}</span></small>
+        <small class="type">Type 1: <span>${typeName}</span></small>
     </div>
     `
 
@@ -138,4 +364,9 @@ const createPokemonCard = (pokemon) => {
     // Additional Note.  Your poke-container needs to already be established within the HTML, otherwise you can not attach the Element that you are creating. In other works, screate small bones and then insert the qualities you are looking for using JavaScript.
     // Fun note, when using the debugger on browser you will not be able to easily determine if the site is created using JavaScript made HTML or natural HTML.
     poke_container.appendChild(pokemonEl)
+}
+
+// Remove Previously Constructed Data
+const removePokemonCard = (pokemon) => {
+    document.getElementById("poke-container").innerHTML=''
 }
