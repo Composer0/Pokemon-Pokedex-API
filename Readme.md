@@ -1,6 +1,6 @@
-###Pokemon Pokedex
+### Pokemon Pokedex
 
-#HTML | CSS | JavaScript | API
+# HTML | CSS | JavaScript | API
 
 This application features the use of PokeAPI which can be found here: https://pokeapi.co/
 
