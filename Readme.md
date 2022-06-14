@@ -1,5 +1,7 @@
 # Pokemon Pokedex
 
+https://www.orionpalmer.com/Pokedex/index.html
+
 ### HTML | CSS | JavaScript | RESTful API
 
 This application features the use of RESTful API known as PokeAPI which can be found here: https://pokeapi.co/
